@@ -1,15 +1,14 @@
-import { useState } from 'react'
-import './App.css'
+import Home from './pages/Home';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <section id="center">
-      </section>
+      <div className="bg-white  dark:bg-blue-950 text-gray-900 dark:text-gray-100">hii tes</div>
+      <Home/>
     </>
   )
 }
 
-export default App
+export default App;
