@@ -1,12 +1,13 @@
 import Home from './pages/Home';
-import './App.css';
+import './index.css';
 
 function App() {
 
   return (
     <>
-      <div className="bg-white  dark:bg-blue-950 text-gray-900 dark:text-gray-100">hii tes</div>
-      <Home/>
+      <div px-9 >
+        <Home />
+      </div>
     </>
   )
 }

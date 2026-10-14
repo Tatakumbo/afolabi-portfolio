@@ -5,16 +5,16 @@ export default function Navbar(){
 
 
     return(
-        <div className='flex '>
+        <div className='flex p-3 justify-between text-black bg-background border-b-2 border-ring'>
             <span>AF</span>
-            <ul>
+            <ul className='flex gap-4'>
                 <li>Home</li>
                 <li>About</li>
                 <li>Projects</li>
                 <li>More</li>
                 <li><button>search nd co</button></li>
             </ul>
-            <span><Sun size={30} /></span>
+            <span><Sun size={20} /></span>
         </div>
     )
 }
