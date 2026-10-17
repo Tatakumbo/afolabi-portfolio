@@ -1,13 +1,17 @@
+import type { ReactNode } from "react";
 
-// type Props{
-//     name: 'string'
-// }
+type ButtonProps = {
+    label: 'string';
+    icon?: ReactNode;
+}
 
-function Button({props}:string){
+function Button({label, icon}:ButtonProps){
 
     return(
-        <button className="text-center bg-background text-primary border rounded-md px-3 py-0.5 " >
-            {props}
+        <button className="inline-flex gap-1 items-center bg-background text-primary border rounded-full px-2  " >
+            {icon && <span>{icon}</span>}
+            <span>{label}</span>
+            
         </button>
     )
 }
