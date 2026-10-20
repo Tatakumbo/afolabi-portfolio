@@ -1,36 +1,46 @@
-import { BsFiletypeHtml, BsFiletypePhp, BsGit, BsGithub, BsJavascript, BsTypescript } from "react-icons/bs"
-import { RiReactjsFill, RiTailwindCssFill } from "react-icons/ri"
+import { BsFiletypePhp, BsGit, BsGithub, BsJavascript, BsTypescript } from "react-icons/bs"
+import { RiCss3Fill, RiReactjsFill, RiTailwindCssFill } from "react-icons/ri"
 import type { ReactNode } from "react"
 import { CgVercel } from "react-icons/cg"
 import { FaHtml5, FaNodeJs } from "react-icons/fa6"
 import { DiMysql } from "react-icons/di"
+import { FileTextIcon } from "lucide-react"
 
 type StackItem = {
     name: string
-    icon : ReactNode
+    icon: ReactNode
 }
 
+/*I'll replace soon enough with real images instead of icons*/
 const myStacks: StackItem[] = [
-    {name: "html5", icon: <FaHtml5/>},
-    {name: "Tailwind CSS", icon: <RiTailwindCssFill/>},
-    {name: "JavaScript", icon: <BsJavascript/>},
-    {name: "TypeScript", icon: <BsTypescript/>},
-    {name: "Vercel", icon: <CgVercel/>},
-    {name: "Git", icon: <BsGit/>},
-    {name: "GitHub", icon: <BsGithub/>},
-    {name: "Node.Js", icon: <FaNodeJs/>},
-    {name: "MySql", icon: <DiMysql/>},
-    {name: "PHP", icon: <BsFiletypePhp/>},
-    {name: "ReactJs", icon: <RiReactjsFill/>},
-    {name: "Document", icon: }
+    { name: "html5", icon: <FaHtml5 /> },
+    { name: "Tailwind", icon: <RiTailwindCssFill /> },
+    {name: "CSS", icon: <RiCss3Fill/>},
+    { name: "JavaScript", icon: <BsJavascript /> },
+    { name: "TypeScript", icon: <BsTypescript /> },
+    { name: "Vercel", icon: <CgVercel /> },
+    { name: "Git", icon: <BsGit /> },
+    { name: "GitHub", icon: <BsGithub /> },
+    { name: "Node.Js", icon: <FaNodeJs /> },
+    { name: "MySql", icon: <DiMysql /> },
+    { name: "PHP", icon: <BsFiletypePhp /> },
+    { name: "ReactJs", icon: <RiReactjsFill /> },
+    { name: "Document", icon: <FileTextIcon /> }
 ];
 
-export default function TechStack(props: StackItem){
+export function TechStack() {
 
-    return(
-        <div>
-            <span>Tech stack</span>
-            {myStacks.map = (item) => {}}
+    return (
+        <div className="py-8">
+            <span className="text-xl font-semibold">Tech stack</span>
+            <ul className="flex flex-wrap gap-4 pt-3">
+                {myStacks.map((stack, index) => (
+                    <li key={index} className="flex flex-col gap-1 items-center justify-center w-15 h-15 border border-gray-700 rounded " >
+                        <span className="text-blue-700 [&>svg]:size-8">{stack.icon}</span>
+                        <span className="text-[10px]">{stack.name}</span>
+                    </li>
+                ))}
+            </ul>
 
         </div>
     )
