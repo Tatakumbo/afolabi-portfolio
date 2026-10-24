@@ -6,6 +6,7 @@ import { MdEmail, MdCalendarMonth } from "react-icons/md";
 import { RiFileTextLine, RiGithubLine, RiLinkedinBoxLine, RiTwitterXLine } from "react-icons/ri";
 import { TechStack } from "./techstack";
 import ProjectsCard from "../projects/ProjectCard";
+import Footer from "../Layout/Footer";
 
 
 function HomePage() {
@@ -29,8 +30,8 @@ function HomePage() {
 
                 <p className="text-secondary text-justify text-md">Full-stack Web Developer and Student building real world products scaling through to my max potential </p>
 
-                <div id="socailslink" className="inline-flex gap-5">
-                    <span id="x"><RiTwitterXLine/></span>
+                <div id="socailslink" className="inline-flex gap-5 [&>span]:cursor-pointer">
+                    <span id="x" ><RiTwitterXLine/></span>
                     <span id="linkedIn"><RiLinkedinBoxLine/></span>
                     <span id="github"><RiGithubLine/></span>
                     <span id="email"><MdEmail/></span>
@@ -39,6 +40,7 @@ function HomePage() {
             </Card>
             <TechStack/>
             <ProjectsCard/>
+            <Footer/>
         </div>
     )
 }
