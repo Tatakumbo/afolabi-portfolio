@@ -4,6 +4,8 @@ import About from './pages/About'
 import Projects from './pages/Projects'
 import Blog from './pages/Blog'
 import Resume from './pages/Resume'
+import Navbar from './components/Layout/Navbar';
+import Footer from './components/Layout/Footer';
 import './index.css';
 
 function App() {
@@ -11,6 +13,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
+    <Navbar/>
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/about' element={<About/>}/>
@@ -18,6 +21,7 @@ function App() {
       <Route path='/blog' element={<Blog/>}/>
       <Route path='/resume' element={<Resume/>}/>
     </Routes>
+    <Footer/>
     </BrowserRouter>
     </>
   )

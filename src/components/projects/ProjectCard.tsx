@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { FaHtml5 } from "react-icons/fa6"
 import { RiCss3Fill, RiTailwindCssFill } from "react-icons/ri";
 import { SiPhp, SiJavascript, SiMysql } from "react-icons/si";
-import Button from "../ui/Button";
+
 
 type ProjectType = {
     image: string,
@@ -67,8 +67,10 @@ export default function ProjectsCard() {
 
     return (
         <>
+            <span className="text-xl font-semibold ">My Projects</span>
+
             <div className=" grid gird-cols-1 md:grid-cols-2 gap-5">
-                {Projects.map((Project, index) => <div key={index} className="border rounded-2xl flex flex-col gap-7">
+                {(Projects.slice(0,2)).map((Project, index) => <div key={index} className="border rounded-2xl flex flex-col gap-7 shadow-xl">
                     <img src={Project.image} alt="" className="object-cover border border-0 rounded-t-2xl w-full h-70" />
                     <div className="flex flex-col gap-7 p-4">
                         <div>

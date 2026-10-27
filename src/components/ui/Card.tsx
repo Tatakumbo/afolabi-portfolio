@@ -14,18 +14,18 @@ function ImageFrame() {
                 {/*remember to write HoOPE in teh picture */}
                 <img src="public\images\Afo tue tue.jpg" alt="fola pic" className="size-23 rounded-full border-1 object-cover absolute bottom-0 left-8 translate-y-[50px]" />
             </div>
-            
+
         </>
     )
 }
 
-function Card({children}: CardProps){
+function Card({ children }: CardProps) {
 
-    return(
-        <div className="w-150 items-right mt-17 flex flex-col gap-5 ">
+    return (
+        <div className="max-w-180 items-right mt-17 flex flex-col gap-5 ">
             {children}
         </div>
     )
 }
 
-export {ImageFrame, Card};
+export { ImageFrame, Card };

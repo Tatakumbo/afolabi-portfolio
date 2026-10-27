@@ -32,11 +32,11 @@ export function TechStack() {
 
     return (
         <div className="py-8">
-            <span className="text-xl font-semibold">Tech stack</span>
+            <span className="text-xl font-semibold">My Tech stack</span>
             <ul className="flex flex-wrap gap-4 pt-3">
                 {myStacks.map((stack, index) => (
-                    <li key={index} className="flex flex-col items-center justify-center w-13 h-13 border border-gray-700 rounded-xl " >
-                        <span className="text-blue-700 [&>svg]:size-8">{stack.icon}</span>
+                    <li key={index} className="flex flex-col items-center justify-center w-10 h-10 sm:w-13 sm:h-13 border border-gray-700 rounded-xl " >
+                        <span className="text-blue-700 [&>svg]:max-md:size-4 [&>svg]:md:size-8">{stack.icon}</span>
                         <span className="text-[8px]">{stack.name}</span>
                     </li>
                 ))}
