@@ -3,6 +3,7 @@ import { FaHtml5 } from "react-icons/fa6"
 import { RiCss3Fill, RiTailwindCssFill } from "react-icons/ri";
 import { SiPhp, SiJavascript, SiMysql } from "react-icons/si";
 
+
 type ProjectType = {
     image: string,
     title: string,
@@ -67,7 +68,7 @@ export default function ProjectsCard() {
     return (
         <>
             <div className=" grid gird-cols-1 md:grid-cols-2 gap-5 py-7 max-w-200 mx-auto ">
-                {Projects.map((Project, index) => <div key={index} className="border rounded-2xl flex flex-col gap-7 shadow-xl">
+                {Projects.map((Project, index) => <div key={index} className="border border-ring rounded-2xl flex flex-col gap-7 shadow-xl">
                     <img src={Project.image} alt="" className="object-cover border border-0 rounded-t-2xl w-full h-70" />
                     <div className="flex flex-col gap-7 p-4">
                         <div>

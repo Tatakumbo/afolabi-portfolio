@@ -61,7 +61,7 @@ const Projects: ProjectType[] = [
         ]
     }
 
-]
+] 
 
 export default function ProjectsCard() {
 
@@ -70,7 +70,7 @@ export default function ProjectsCard() {
             <span className="text-xl font-semibold ">My Projects</span>
 
             <div className=" grid gird-cols-1 md:grid-cols-2 gap-5">
-                {(Projects.slice(0,2)).map((Project, index) => <div key={index} className="border rounded-2xl flex flex-col gap-7 shadow-xl">
+                {(Projects.slice(0,2)).map((Project, index) => <div key={index} className="border border-ring rounded-2xl flex flex-col gap-7 shadow-md">
                     <img src={Project.image} alt="" className="object-cover border border-0 rounded-t-2xl w-full h-70" />
                     <div className="flex flex-col gap-7 p-4">
                         <div>

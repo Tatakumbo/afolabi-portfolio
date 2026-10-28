@@ -17,8 +17,8 @@ function HomePage() {
             <ImageFrame />
 
             <Card>
-                <div className="">
-                    <h1 className="inline-flex items-center gap-1 text-4xl font-semibold pb-0">Afoa <VerifiedIcon size={30} className="fill-blue-500 stroke-1 text-white" />
+                <div className="bg-card">
+                    <h1 >Afolabi Fajana <VerifiedIcon size={30} className="fill-blue-500 stroke-1 text-primary-foreground" />
                     </h1>
                     <Rotation/>
                 </div>

@@ -1,0 +1,48 @@
+const Projects: ProjectType[] = [
+    {
+        image: "src/components/projects/images/img1.png",
+        title: "Community complaints and reports",
+        about: "An open reporting system that collects community complaints, set a status and gets updated by Admin based on the progress",
+        technologies: [
+            { icon: <FaHtml5 /> },
+            { icon: <RiTailwindCssFill /> },
+            { icon: <SiJavascript /> },
+            { icon: <SiPhp /> },
+            { icon: <SiMysql /> }
+        ]
+    },
+    {
+        image: 'src/components/projects/images/img2.png',
+        title: "PPMS",
+        about: "An Pharmacy Prescription Management System with an inventory that keeps record of drugs",
+        technologies: [
+            { icon: <FaHtml5 /> },
+            { icon: <RiCss3Fill /> },
+            { icon: <SiJavascript /> },
+            { icon: <SiPhp /> }
+        ]
+    },
+    {
+        image: 'src/components/projects/images/img3.png',
+        title: "PPMS",
+        about: "An Pharmacy Prescription Management System with an inventory that keeps record of drugs",
+        technologies: [
+            { icon: <FaHtml5 /> },
+            { icon: <RiCss3Fill /> },
+            { icon: <SiJavascript /> },
+            { icon: <SiPhp /> }
+        ]
+    },
+    {
+        image: 'src/components/projects/images/img5.png',
+        title: "PPMS",
+        about: "An Pharmacy Prescription Management System with an inventory that keeps record of drugs",
+        technologies: [
+            { icon: <FaHtml5 /> },
+            { icon: <RiCss3Fill /> },
+            { icon: <SiJavascript /> },
+            { icon: <SiPhp /> }
+        ]
+    }
+
+]

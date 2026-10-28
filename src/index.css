@@ -22,7 +22,7 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.88 0.012 155);
   --input: oklch(0.88 0.012 155);
-  --ring: oklch(0.55 0.02 155);
+  --ring: oklch(69.058% 0.02324 154.09);
 }
 
 .dark {
@@ -72,4 +72,10 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base{
+  h1{
+    @apply text-4xl font-semibold inline-flex items-center gap-1 text-primary text-4xl font-semibold pb-0;
+  }
 }
