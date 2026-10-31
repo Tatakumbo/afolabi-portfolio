@@ -23,6 +23,7 @@
   --border: oklch(0.88 0.012 155);
   --input: oklch(0.88 0.012 155);
   --ring: oklch(69.058% 0.02324 154.09);
+  --emphasis: oklch(65.94% 0.10153 66.36);
 }
 
 .dark {
@@ -44,6 +45,7 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
+  --emphasis: oklch(74.755% 0.11336 65.8);
 }
 
 @theme inline {
@@ -68,6 +70,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-emphasis: var(--emphasis);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -78,4 +81,12 @@
   h1{
     @apply text-4xl font-semibold inline-flex items-center gap-1 text-primary text-4xl font-semibold pb-0;
   }
+  p{
+    @apply text-secondary text-base leading-snug text-justify;
+  }
 }
+
+@utility emphasis{
+    @apply text-emphasis;
+    font-weight: 600;
+  }

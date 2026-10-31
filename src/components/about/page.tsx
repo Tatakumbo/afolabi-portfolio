@@ -1,10 +1,10 @@
+import AboutHero from "./AboutHero"
+
 export default function AboutPage() {
 
     return(
-        <>
-            <div>
-                <h1>About me</h1>
-            </div>
-        </>
+        <div className="max-w-3xl mx-auto">
+          <AboutHero/>  
+        </div>
     )
 }

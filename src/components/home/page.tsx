@@ -12,8 +12,6 @@ function HomePage() {
 
     return (
         <div className="max-w-3xl mx-auto">
-    
-
             <ImageFrame />
 
             <Card>
@@ -27,7 +25,7 @@ function HomePage() {
                     <Button label="Email me" icon={<MdEmail />} />
                 </div>
 
-                <p className="text-secondary text-md text-justify">Full-stack Web Developer and Student building real world products scaling through to my max potential. I love turning creative ideas into interactive websites and am constantly learning to make the web more beautiful and accessible. </p>
+                <p className="">Full-stack Web Developer and Student building real world products scaling through to my max potential. I love turning creative ideas into interactive websites and am constantly learning to make the web more beautiful and accessible. </p>
 
                 
                 <Socials/>
