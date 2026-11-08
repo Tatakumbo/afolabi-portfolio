@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { FaHtml5 } from "react-icons/fa6"
 import { RiCss3Fill, RiTailwindCssFill } from "react-icons/ri";
 import { SiPhp, SiJavascript, SiMysql } from "react-icons/si";
+import { Link } from "react-router-dom";
 
 
 type ProjectType = {
@@ -74,7 +75,7 @@ export default function ProjectsCard() {
                     <img src={Project.image} alt="" className="object-cover border border-0 rounded-t-2xl w-full h-70" />
                     <div className="flex flex-col gap-7 p-4">
                         <div>
-                            <h2 id="title" className="text-xl bold">{Project.title}</h2>
+                            <h4 id="title" className="">{Project.title}</h4>
                             <p className="font-[Calibri] ">{Project.about}</p>
                         </div>
                         <div>
@@ -92,7 +93,7 @@ export default function ProjectsCard() {
                 </div>
                 )}
             </div>
-            {Projects.length > 2 && <div className="my-8 text-center"> <span className="border px-6 py-2 rounded-full text-sm font-medium">Open more Projects</span>
+            {Projects.length > 2 && <div className="my-8 text-center"> <Link to="/projects"  className="border px-6 py-2 rounded-full text-sm font-medium">Open more Projects</Link>
             </div>}
         </>
     )

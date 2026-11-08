@@ -7,7 +7,7 @@ import { DiMysql } from "react-icons/di"
 import { FileTextIcon } from "lucide-react"
 
 type StackItem = {
-    name: string
+    name: string 
     icon: ReactNode
 }
 

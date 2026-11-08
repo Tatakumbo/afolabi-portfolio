@@ -84,6 +84,9 @@
   p{
     @apply text-secondary text-base leading-snug text-justify;
   }
+  h4{
+    @apply text-xl;
+  }
 }
 
 @utility emphasis{

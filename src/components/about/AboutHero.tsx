@@ -3,14 +3,13 @@
 export default function AboutHero() {
 
     return (
-        <section>
+        <section className="py-5">
             <div className="mb-3">
                 <h1>About me</h1>
                 {/*line*/}
-                <span className="block w-10 h-1 bg-primary"></span>
+                <span className="block w-20 h-1 bg-primary mt-3 mb-5"></span>
             </div>
-            <p>
-                Hi, i'm <span className="emphasis ">Afolabi Fajana</span>,<br />
+            <p>Hi, i'm <span className="emphasis ">Afolabi Fajana</span>,<br />
                 I'm a <span className="emphasis">Full-Stack Developer</span> passionate about turning ideas into interactive, visually appealing anf user-friendly web experiences.
             </p>
             <p>
