@@ -1,18 +1,28 @@
-import {  RiGithubLine, RiLinkedinBoxLine, RiTwitterXLine } from "react-icons/ri";
-
+import Link from '../ui/Link';
 
 export default function Footer() {
-
-    return (
-        <div className="flex flex-col justify-center items-center border-t border-t-ring gap-4 py-4">
-            <div>Barely built with love and inspirition from Priyanshu Urmaliya</div>
-            <div> &copy; {new Date().getFullYear()} </div>
-            <div className="inline-flex gap-5">
-                <span aria-label="x" className="cursor-pointer"><RiTwitterXLine /></span>
-                <span aria-label="linkedIn"className="cursor-pointer"><RiLinkedinBoxLine /></span>
-                <span aria-label="github" className="cursor-pointer"><RiGithubLine /></span>
-            </div>
-
-        </div>
-    )
+  return (
+    <footer className="mt-16 border-t border-border print:hidden">
+      <div className="mx-auto flex max-w-(--portfolio-content-width) flex-col items-center justify-between gap-3 px-4 py-6 text-sm text-muted-foreground sm:flex-row sm:px-6">
+        <p>&copy; {new Date().getFullYear()} Fola. All rights reserved.</p>
+        <ul className="flex gap-4">
+          <li>
+            <Link to="/projects" className="hover:text-foreground">
+              Projects
+            </Link>
+          </li>
+          <li>
+            <Link to="/blog" className="hover:text-foreground">
+              Blog
+            </Link>
+          </li>
+          <li>
+            <Link to="/resume" className="hover:text-foreground">
+              Resume
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  );
 }

@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 :root {
+  color-scheme: light;
   --grid-cell-size: 40px;
   --portfolio-grid-columns: 18;
   --portfolio-content-width: calc(var(--grid-cell-size) * var(--portfolio-grid-columns));
   --radius: 0.625rem;
-  --background: oklch(100% 0.00011 271.152);
+  --background: oklch(1 0 0);
   --foreground: oklch(0.18 0.01 155);
   --card: oklch(0.985 0.005 155);
   --card-foreground: oklch(0.18 0.01 155);
@@ -22,11 +25,11 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.88 0.012 155);
   --input: oklch(0.88 0.012 155);
-  --ring: oklch(69.058% 0.02324 154.09);
-  --emphasis: oklch(65.94% 0.10153 66.36);
+  --ring: oklch(0.55 0.02 155);
 }
 
 .dark {
+  color-scheme: dark; /* dark scrollbars and native date pickers */
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -45,12 +48,12 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
-  --emphasis: oklch(74.755% 0.11336 65.8);
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  /* Geist isn't installed, so use the system stack. Add a real font later with @fontsource. */
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -70,26 +73,51 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-emphasis: var(--emphasis);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-@layer base{
-  h1{
-    @apply text-4xl font-semibold inline-flex items-center gap-1 text-primary text-4xl font-semibold pb-0;
+/* Apply the tokens globally so the .dark class actually changes the page. */
+@layer base {
+  * {
+    border-color: var(--border);
   }
-  p{
-    @apply text-secondary text-base leading-snug text-justify;
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
   }
-  h4{
-    @apply text-xl;
+  /* Visible keyboard focus everywhere (mouse clicks don't trigger it). */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
   }
 }
 
-@utility emphasis{
-    @apply text-emphasis;
-    font-weight: 600;
+/* Slim interlocking grid behind every page (rendered once, in Layout).
+   Cells use --grid-cell-size, the same unit as the content column width, so the
+   column edges always sit exactly on a grid line. Tune it with the two values below:
+   the 70% (line strength) and the radial-gradient stops (how far the fade reaches). */
+.page-grid {
+  --grid-line: color-mix(in oklab, var(--border) 70%, transparent);
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-cell-size) var(--grid-cell-size);
+  background-position-x: calc(50% + var(--grid-cell-size) / 2);
+  background-position-y: 0;
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 20%, black 35%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 20%, black 35%, transparent 100%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
+}

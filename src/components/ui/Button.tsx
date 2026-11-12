@@ -1,18 +1,30 @@
-import type { ReactNode } from "react";
+import type { ButtonHTMLAttributes } from 'react';
 
-type ButtonProps = {
-    label: string;
-    icon?: ReactNode;
+type Variant = 'primary' | 'outline';
+
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: Variant;
 }
 
-function Button({label, icon}:ButtonProps){
+const variants: Record<Variant, string> = {
+  primary: 'bg-primary text-primary-foreground hover:opacity-90',
+  outline: 'border border-border bg-background text-primary hover:bg-accent',
+};
 
-    return(
-        <button className=" text-sm inline-flex gap-1 items-center bg-background text-primary border border-ring rounded-md px-2  cursor-pointer " >
-            {icon && <span>{icon}</span>}
-            <span>{label}</span>
-            
-        </button>
-    )
+export default function Button({
+  variant = 'outline',
+  className = '',
+  type = 'button',
+  children,
+  ...rest
+}: ButtonProps) {
+  return (
+    <button
+      type={type}
+      className={`rounded-md px-3 py-1 text-center transition-colors ${variants[variant]} ${className}`}
+      {...rest}
+    >
+      {children}
+    </button>
+  );
 }
-export default Button;

@@ -1,100 +1,48 @@
-import type { ReactNode } from "react";
-import { FaHtml5 } from "react-icons/fa6"
-import { RiCss3Fill, RiTailwindCssFill } from "react-icons/ri";
-import { SiPhp, SiJavascript, SiMysql } from "react-icons/si";
-import { Link } from "react-router-dom";
+import { ArrowUpRight } from 'lucide-react';
+import { motion } from '../../lib/motion';
+import type { Project } from '../../types';
 
+type ProjectCardProps = {
+  project: Project;
+  onSelect: (project: Project) => void;
+};
 
-type ProjectType = {
-    image: string,
-    title: string,
-    about: string,
-    technologies: tech[]
-}
-type tech = {
-    icon: ReactNode;
-}
+export default function ProjectCard({ project, onSelect }: ProjectCardProps) {
+  return (
+    <motion.article
+      whileHover={{ y: -4 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 22 }}
+      className="group relative flex h-full flex-col gap-3 rounded-xl border border-border bg-card p-5 text-card-foreground transition-[border-color,box-shadow] hover:border-ring hover:shadow-md has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring"
+    >
+      <div className="flex items-start justify-between gap-3">
+        <h3 className="leading-snug font-semibold">
+          {/* The ::after stretches this button over the whole card, so the entire card is clickable. */}
+          <button
+            type="button"
+            onClick={() => onSelect(project)}
+            className="text-left outline-none after:absolute after:inset-0"
+          >
+            {project.title}
+          </button>
+        </h3>
+        <ArrowUpRight
+          size={18}
+          aria-hidden="true"
+          className="shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+        />
+      </div>
 
-const Projects: ProjectType[] = [
-    {
-        image: "src/components/projects/images/img1.png",
-        title: "Community complaints and reports",
-        about: "An open reporting system that collects community complaints, set a status and gets updated by Admin based on the progress",
-        technologies: [
-            { icon: <FaHtml5 /> },
-            { icon: <RiTailwindCssFill /> },
-            { icon: <SiJavascript /> },
-            { icon: <SiPhp /> },
-            { icon: <SiMysql /> }
-        ]
-    },
-    {
-        image: 'src/components/projects/images/img2.png',
-        title: "PPMS",
-        about: "An Pharmacy Prescription Management System with an inventory that keeps record of drugs",
-        technologies: [
-            { icon: <FaHtml5 /> },
-            { icon: <RiCss3Fill /> },
-            { icon: <SiJavascript /> },
-            { icon: <SiPhp /> }
-        ]
-    },
-    {
-        image: 'src/components/projects/images/img3.png',
-        title: "PPMS",
-        about: "An Pharmacy Prescription Management System with an inventory that keeps record of drugs",
-        technologies: [
-            { icon: <FaHtml5 /> },
-            { icon: <RiCss3Fill /> },
-            { icon: <SiJavascript /> },
-            { icon: <SiPhp /> }
-        ]
-    },
-    {
-        image: 'src/components/projects/images/img5.png',
-        title: "PPMS",
-        about: "An Pharmacy Prescription Management System with an inventory that keeps record of drugs",
-        technologies: [
-            { icon: <FaHtml5 /> },
-            { icon: <RiCss3Fill /> },
-            { icon: <SiJavascript /> },
-            { icon: <SiPhp /> }
-        ]
-    }
+      <p className="line-clamp-3 text-sm text-muted-foreground">{project.summary}</p>
 
-] 
-
-export default function ProjectsCard() {
-
-    return (
-        <>
-            <span className="text-xl font-semibold ">My Projects</span>
-
-            <div className=" grid gird-cols-1 md:grid-cols-2 gap-5">
-                {(Projects.slice(0,2)).map((Project, index) => <div key={index} className="border border-ring rounded-2xl flex flex-col gap-7 shadow-md">
-                    <img src={Project.image} alt="" className="object-cover border border-0 rounded-t-2xl w-full h-70" />
-                    <div className="flex flex-col gap-7 p-4">
-                        <div>
-                            <h4 id="title" className="">{Project.title}</h4>
-                            <p className="font-[Calibri] ">{Project.about}</p>
-                        </div>
-                        <div>
-                            <span className="text-sm ">Technologies</span>
-                            <ul className="flex flex-wrap gap-4">
-                                {Project.technologies.map((tech, index) => (
-                                    <li key={index} className="border border-2 border-gray-200 rounded text-green-700 p-1 [&>svg]:size-4" >
-                                        {tech.icon}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <small className="inline-flex items-right cursor-pointer">View Details</small>
-                    </div>
-                </div>
-                )}
-            </div>
-            {Projects.length > 2 && <div className="my-8 text-center"> <Link to="/projects"  className="border px-6 py-2 rounded-full text-sm font-medium">Open more Projects</Link>
-            </div>}
-        </>
-    )
+      {project.tags.length > 0 && (
+        <ul className="mt-auto flex flex-wrap gap-2 pt-1">
+          {project.tags.map((tag) => (
+            <li key={tag} className="rounded-md bg-muted px-2 py-0.5 text-xs text-muted-foreground">
+              {tag}
+            </li>
+          ))}
+        </ul>
+      )}
+    </motion.article>
+  );
 }
