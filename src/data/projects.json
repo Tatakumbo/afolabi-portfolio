@@ -1,0 +1,20 @@
+[
+  {
+    "id": "pharmacy-prescription-management",
+    "title": "Pharmacy Prescription Management System",
+    "summary": "A web app for managing patients, prescriptions, dispensing and inventory in a pharmacy.",
+    "tags": ["PHP", "MySQL"]
+  },
+  {
+    "id": "smart-inverter-monitoring",
+    "title": "Smart Monitoring and Control System for a 2.5/3kVA Inverter",
+    "summary": "Design and implementation of a system that monitors and controls an inverter.",
+    "tags": ["Monitoring", "Control"]
+  },
+  {
+    "id": "community-complaint-reporting",
+    "title": "Community Complaint Reporting System",
+    "summary": "A case study of a system that lets community members report complaints.",
+    "tags": ["Case study"]
+  }
+]

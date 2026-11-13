@@ -1,14 +1,30 @@
+import type { ButtonHTMLAttributes } from 'react';
 
-// type Props{
-//     name: 'string'
-// }
+type Variant = 'primary' | 'outline';
 
-function Button({props}:string){
-
-    return(
-        <button className="text-center bg-background text-primary border rounded-md px-3 py-0.5 " >
-            {props}
-        </button>
-    )
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: Variant;
 }
-export default Button;
+
+const variants: Record<Variant, string> = {
+  primary: 'bg-primary text-primary-foreground hover:opacity-90',
+  outline: 'border border-border bg-background text-primary hover:bg-accent',
+};
+
+export default function Button({
+  variant = 'outline',
+  className = '',
+  type = 'button',
+  children,
+  ...rest
+}: ButtonProps) {
+  return (
+    <button
+      type={type}
+      className={`rounded-md px-3 py-1 text-center transition-colors ${variants[variant]} ${className}`}
+      {...rest}
+    >
+      {children}
+    </button>
+  );
+}

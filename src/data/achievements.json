@@ -1,0 +1,14 @@
+[
+  {
+    "id": "sample-1",
+    "title": "Replace with your first achievement",
+    "year": "2026",
+    "description": "Add a certificate, award, competition result or milestone. Edit src/data/achievements.json."
+  },
+  {
+    "id": "sample-2",
+    "title": "Replace with your second achievement",
+    "year": "2025",
+    "description": "Each entry needs an id, title, year and description."
+  }
+]
