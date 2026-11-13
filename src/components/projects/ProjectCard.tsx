@@ -10,7 +10,7 @@ type ProjectCardProps = {
 export default function ProjectCard({ project, onSelect }: ProjectCardProps) {
   return (
     <motion.article
-      whileHover={{ y: -4 }}
+      whileHover={{ y: -1 }}
       transition={{ type: 'spring', stiffness: 300, damping: 22 }}
       className="group relative flex h-full flex-col gap-3 rounded-xl border border-border bg-card p-5 text-card-foreground transition-[border-color,box-shadow] hover:border-ring hover:shadow-md has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring"
     >
@@ -40,8 +40,11 @@ export default function ProjectCard({ project, onSelect }: ProjectCardProps) {
             <li key={tag} className="rounded-md bg-muted px-2 py-0.5 text-xs text-muted-foreground">
               {tag}
             </li>
+            
           ))}
         </ul>
+        
+        
       )}
     </motion.article>
   );

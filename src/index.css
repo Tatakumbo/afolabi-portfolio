@@ -100,6 +100,8 @@
   }
 }
 
+
+
 /* Slim interlocking grid behind every page (rendered once, in Layout).
    Cells use --grid-cell-size, the same unit as the content column width, so the
    column edges always sit exactly on a grid line. Tune it with the two values below:
@@ -114,6 +116,16 @@
   background-position-y: 0;
   -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 20%, black 35%, transparent 100%);
   mask-image: radial-gradient(ellipse 90% 80% at 50% 20%, black 35%, transparent 100%);
+}
+
+p{
+  text-align: justify;
+}
+
+.emphasis{
+  color: brown;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ font-style: italic;
 }
 
 @media (prefers-reduced-motion: no-preference) {

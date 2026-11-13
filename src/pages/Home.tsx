@@ -7,7 +7,9 @@ import { Stagger, StaggerItem } from '../components/ui/Stagger';
 import { seedPosts, seedProjects } from '../data';
 import { STORE_KEYS, useCollection } from '../lib/useCollection';
 import type { Post, Project } from '../types';
-import {motion} from 'motion/react';
+import { motion } from 'motion/react';
+import Rotation from '../components/home/Rotation';
+import Socials from '../components/home/Socials';
 
 export default function Home() {
   const { items: projects } = useCollection<Project>(STORE_KEYS.projects, seedProjects);
@@ -29,6 +31,7 @@ export default function Home() {
           <p className="mt-2 max-w-prose text-muted-foreground">
             I build web applications and systems. Take a look at my work below.
           </p>
+          <Rotation />
         </StaggerItem>
         <StaggerItem className="mt-4 flex gap-3">
           <Link
@@ -41,6 +44,9 @@ export default function Home() {
             About me
           </Link>
         </StaggerItem>
+        
+          <Socials />
+        
       </Stagger>
 
       <section className="py-6">

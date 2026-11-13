@@ -9,14 +9,16 @@ export default function About() {
       <SectionHeading as="h1" title="About me" description="A little about who I am and what I do." />
 
       <div className="max-w-prose space-y-4 leading-relaxed">
-        <p>
-          I'm Fola, a student and developer who enjoys building useful software. Replace this
-          paragraph with your story: where you study, what got you into building things, and what
-          you want to do next.
+        <p className='text-justify'>
+          I'm Fola, a student and developer who enjoys building useful software. I'm a <span className="emphasis">Full-Stack Developer</span> passionate about turning ideas into interactive, visually appealing and user-friendly web experiences.
         </p>
         <p>
-          Outside of coursework I work on personal projects and keep learning new tools. Add what you
-          enjoy, what you're looking for (internship, freelance, collaboration) and how to reach you.
+          I enjoy building responsive websites, creating reusable componments, and bringing designs to life through code. My journey in web development is driven by curiosity, creativity, and a constant desire to improve my skills.
+<br/><br/>
+          I work with technologies like <span className="emphasis">HTML</span>, <span className="emphasis">CSS</span>, <span className="emphasis">TailwindCSS</span>, <span className="emphasis">Javascript</span>, <span className="emphasis">Typescript</span> and <span className="emphasis">React</span> while exploring modern tools and technologies to build better Web Applications, it is not just not about writing code, it is <span className="emphasis">Solving a Problem</span>, <span className="emphasis">Learning countinously</span> and <span className="emphasis">Creating a Digital Experience that makes a difference. </span>
+
+
+           Outside of coursework I work on personal projects and keep learning new tools. I look forward to progressing through job opportunities, internship, freelance and collaboration.
         </p>
       </div>
 

@@ -16,7 +16,7 @@ export default function Rotation() {
         , []);
 
     return (
-        <div className="text-sm">
+        <div className="text-sm py-3">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={index}
