@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import { isHttpUrl, parseTags } from '../../lib/text';
+import { isHttpUrl, isImageSrc, parseTags } from '../../lib/text';
 import type { Project } from '../../types';
 import Button from '../ui/Button';
 import { TextAreaField, TextField } from '../ui/Field';
@@ -17,6 +17,7 @@ export default function ProjectForm({ initial, onSave, onCancel }: ProjectFormPr
   const [title, setTitle] = useState(initial?.title ?? '');
   const [summary, setSummary] = useState(initial?.summary ?? '');
   const [tags, setTags] = useState(initial?.tags.join(', ') ?? '');
+  const [image, setImage] = useState(initial?.image ?? '');
   const [link, setLink] = useState(initial?.link ?? '');
   const [repo, setRepo] = useState(initial?.repo ?? '');
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -27,6 +28,7 @@ export default function ProjectForm({ initial, onSave, onCancel }: ProjectFormPr
     const next: Record<string, string> = {};
     if (!title.trim()) next.title = 'Title is required.';
     if (!summary.trim()) next.summary = 'Summary is required.';
+    if (image.trim() && !isImageSrc(image.trim())) next.image = 'Use a path like /images/projects/shop.jpg or an https:// link.';
     if (link.trim() && !isHttpUrl(link.trim())) next.link = 'Must start with http:// or https://';
     if (repo.trim() && !isHttpUrl(repo.trim())) next.repo = 'Must start with http:// or https://';
 
@@ -37,6 +39,7 @@ export default function ProjectForm({ initial, onSave, onCancel }: ProjectFormPr
       title: title.trim(),
       summary: summary.trim(),
       tags: parseTags(tags),
+      ...(image.trim() ? { image: image.trim() } : {}),
       ...(link.trim() ? { link: link.trim() } : {}),
       ...(repo.trim() ? { repo: repo.trim() } : {}),
     });
@@ -58,9 +61,17 @@ export default function ProjectForm({ initial, onSave, onCancel }: ProjectFormPr
         value={tags}
         onChange={(e) => setTags(e.target.value)}
       />
+      <TextField
+        label="Image (optional)"
+        hint="Put the file in public/images/projects/ and enter /images/projects/name.jpg, or paste a full https:// link."
+        placeholder="/images/projects/name.jpg"
+        value={image}
+        onChange={(e) => setImage(e.target.value)}
+        error={errors.image}
+      />
       <div className="grid gap-4 sm:grid-cols-2">
         <TextField
-          label="Live link (optional)"
+          label="Website link (optional)"
           type="url"
           placeholder="https://"
           value={link}
@@ -68,7 +79,7 @@ export default function ProjectForm({ initial, onSave, onCancel }: ProjectFormPr
           error={errors.link}
         />
         <TextField
-          label="Code link (optional)"
+          label="Repository link (optional)"
           type="url"
           placeholder="https://"
           value={repo}

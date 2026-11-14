@@ -18,7 +18,7 @@ const moreLinks = [
   { label: 'Resume', to: '/resume' },
 ];
 
-// The underline is one shared element: when the page changes it slides to the new link.
+
 function NavItem({ to, label }: { to: string; label: string }) {
   const current = useIsCurrent(to);
 
@@ -34,7 +34,7 @@ function NavItem({ to, label }: { to: string; label: string }) {
         <motion.span
           layoutId="nav-underline"
           className="absolute inset-x-0 -bottom-1 h-px bg-foreground"
-          transition={{ type: 'spring', stiffness: 500, damping: 40 }}
+          transition={{ type: 'spring', stiffness: 500, damping: 30}}
         />
       )}
     </li>

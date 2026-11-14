@@ -1,18 +1,18 @@
 import type { ReactNode } from 'react';
-import usePath from '../../hooks/usePath';
+import useIsCurrent from '../../hooks/useIsCurrent';
 
 type LinkProps = {
   to: string;
   children: ReactNode;
   className?: string;
+  exact?: boolean;
   onClick?: () => void;
 };
 
 // Hash link that marks itself as the current page, so styles can use aria-[current=page]:.
 // When you switch to react-router-dom, replace this with <NavLink>.
-export default function Link({ to, children, className = '', onClick }: LinkProps) {
-  const path = usePath();
-  const isCurrent = to === '/' ? path === '/' : path === to || path.startsWith(`${to}/`);
+export default function Link({ to, children, className = '', exact = false, onClick }: LinkProps) {
+  const isCurrent = useIsCurrent(to, exact);
 
   return (
     <a

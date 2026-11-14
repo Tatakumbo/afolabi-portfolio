@@ -17,7 +17,8 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
 
   return (
     <>
-      <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Two columns: the page content is 720px wide, so three cards would be too narrow for the image and buttons. */}
+      <Stagger className="grid gap-4 sm:grid-cols-2">
         {projects.map((project) => (
           <StaggerItem key={project.id} className="h-full">
             <ProjectCard project={project} onSelect={handleSelect} />

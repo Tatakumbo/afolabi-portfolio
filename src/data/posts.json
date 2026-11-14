@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "slug": "portfolio-design",
+    "title": "Portfolio Design",
+    "date": "2026-11-14",
+    "excerpt": "Excerpt",
+    "body": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore dignissimos error facere velit eum consequatur delectus voluptate laboriosam ut veritatis laborum earum, labore cum facilis quidem aliquam mollitia voluptatem! Nulla.\n          Totam iste aliquam repellendus suscipit rem deserunt alias voluptates dolore nulla vitae, recusandae hic beatae et nostrum ipsum cumque illum sapiente quaerat aut quod consequuntur? Velit doloribus nulla enim"
+    ]
+  },
+  {
+    "slug": "Bl",
+    "title": "Blog sample2",
+    "date": "2026-11-14",
+    "excerpt": "Excerpt",
+    "body": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore dignissimos error facere velit eum consequatur delectus voluptate laboriosam ut veritatis laborum earum, labore cum facilis quidem aliquam mollitia voluptatem! Nulla.\n          Totam iste aliquam repellendus suscipit rem deserunt alias voluptates dolore nulla vitae, recusandae hic beatae et nostrum ipsum cumque illum sapiente quaerat aut quod consequuntur? Velit doloribus nulla enim deleniti!\n          Eos, a aliquam assumenda sit repellat laboriosam alias veritatis nihil commodi facilis sed, exercitationem iusto. Magnam quibusdam commodi qui modi necessitatibus voluptas aspernatur, non tenetur impedit facilis corporis, id asperiores?\n          Molestiae dicta libero necessitatibus voluptate vitae temporibus voluptatem, sint delectus minus ex vel molestias ipsum magnam voluptas voluptatum cumque eius, aliquam unde optio modi? Soluta hic nostrum neque amet enim!\n          Nemo, odit libero? Maxime blanditiis error sed! Voluptatum culpa, laboriosam in, id rem magnam tempora eum velit placeat maiores nostrum, repudiandae voluptas minus voluptatem earum ratione sunt ab dicta nesciunt.\n          Eum nesciunt laborum magni vero, repellat quia at iure inventore voluptate facilis aliquid dolore quod voluptas dolorem. Dolorem at voluptatem hic dignissimos, eos minus voluptatum earum eaque obcaecati laborum illo?\n          Officiis, tempore corporis aliquam fugiat assumenda praesentium minima iure quisquam similique cumque ratione laboriosam iste dolor nisi illum iusto dolore ipsa esse atque, ad excepturi corrupti ipsum. Fugit, eum maiores.\n          Facilis laboriosam quisquam praesentium vel explicabo, cum repellat laudantium voluptate animi dignissimos! Odit dolores, quia beatae enim non id nihil, perferendis repellat quis ipsam voluptatem, nostrum deserunt natus ad modi!\n          Odio debitis optio nemo iste. Aut recusandae, similique quo qui quam pariatur iste quos blanditiis sapiente iusto tenetur accusantium culpa sequi, perferendis exercitationem! Voluptatum, omnis vero. Ipsam maxime laborum aspernatur.\n          Earum expedita odio animi consequatur ab dolores excepturi accusamus nulla! Obcaecati totam quaerat aliquid ut minima voluptatem assumenda possimus, quos voluptatum voluptates, aperiam mollitia sunt neque quod suscipit quidem repudiandae.\n          In quasi officiis, perspiciatis ipsa temporibus facilis, reprehenderit natus vitae tempora quibusdam, blanditiis maiores praesentium reiciendis saepe? Culpa nostrum perspiciatis dolore quod odit vitae illum ullam consequuntur! Accusantium, labore in!\n          Soluta delectus est aliquam id minima error inventore rem nam quasi. Ducimus consequuntur enim dolor doloribus excepturi. Sunt, vero impedit maxime id recusandae veritatis voluptatum tenetur maiores consectetur, ad ut?\n          Iusto ipsam explicabo provident hic deserunt qui, optio dicta minima necessitatibus laudantium molestiae labore voluptate soluta ipsum beatae quos fugit reiciendis iure voluptatibus. Eligendi odio ex neque quo nihil exercitationem!\n          Quod est omnis qui rem nam laudantium voluptate nobis, iste, fuga ipsa beatae, animi placeat ipsam nihil recusandae illo culpa dolorem impedit velit sapiente accusantium harum voluptatem aspernatur hic. Corrupti!\n          Molestiae quos qui ad perferendis iusto unde eum non temporibus, rerum aliquid consequuntur doloremque a repellat numquam excepturi sit tempora, nam incidunt aliquam! Sapiente quis itaque officia tenetur numquam architecto.\n          Tempora magni aliquam at, debitis assumenda veritatis voluptas eligendi tempore numquam aspernatur aut iure, deserunt illo, perferendis nam a. Unde, nobis itaque molestias maiores obcaecati cum voluptates officiis totam a.\n          Dolorum amet aut id iure consequatur voluptatem illo error veritatis distinctio quas? Accusantium nam molestias repellat sequi nobis tenetur culpa distinctio, laudantium atque animi vero beatae hic voluptas reprehenderit rem.\n          Itaque saepe velit incidunt alias, maxime sed sequi voluptas a reiciendis magni eveniet, fuga aut ex harum iure iusto? Quam qui at voluptatum odio sunt voluptatem totam eius accusantium labore.",
+      "Consequuntur, hic repellendus. Laboriosam laborum deserunt iste nemo. Dolorem molestiae architecto dolore earum fugiat illum nostrum alias sequi eum odio aut mollitia, dolores qui temporibus omnis, est voluptates expedita perferendis.\n          Cupiditate enim laborum debitis recusandae labore praesentium? Similique vero eos dolorem beatae ut quia in at assumenda! Sed ducimus aspernatur nostrum veritatis corporis incidunt eveniet similique nihil odit. Illum, cumque."
+    ]
+  },
+   {
+    "slug": "Motion",
+    "title": "Motion",
+    "date": "2026-11-14",
+    "excerpt": "Motion library in react ",
+    "body": [
+      "I was able to learn motion in react as a tool for sleek and clean  animations with minimalistic codes.\n It serve multiple wabsites and is the modern replacement for framer motion which is still actives being used by developers"
+    ]
+  }
+]

@@ -1,23 +1,20 @@
-import ProjectCard from '../components/projects/ProjectCard';
+import ProjectGrid from '../components/projects/ProjectGrid';
 import SectionHeading from '../components/ui/SectionHeading';
-import projects from '../data/projects.json';
+import { seedProjects } from '../data';
+import { STORE_KEYS, useCollection } from '../lib/useCollection';
 import type { Project } from '../types';
 
 export default function Projects() {
-  const items = projects as Project[];
+  const { items } = useCollection<Project>(STORE_KEYS.projects, seedProjects);
 
   return (
     <div className="py-8">
-      <SectionHeading as="h1" title="My Projects" description="Things I've designed and built." />
+      <SectionHeading as="h1" title="Projects" description="Things I've designed and built. Select one for details." />
 
       {items.length === 0 ? (
-        <p className="text-muted-foreground">No projects yet. Add some in src/data/projects.json.</p>
+        <p className="text-muted-foreground">No projects yet.</p>
       ) : (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
+        <ProjectGrid projects={items} />
       )}
     </div>
   );

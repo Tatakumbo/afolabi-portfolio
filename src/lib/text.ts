@@ -19,6 +19,11 @@ export function parseTags(input: string): string[] {
   return Array.from(new Set(input.split(',').map((tag) => tag.trim()).filter(Boolean)));
 }
 
+// Images may be a site path ("/images/projects/a.jpg") or an http(s) URL. "//host" is rejected.
+export function isImageSrc(value: string): boolean {
+  return (value.startsWith('/') && !value.startsWith('//')) || isHttpUrl(value);
+}
+
 // Only http(s) links are allowed, which blocks javascript: URLs in href attributes.
 export function isHttpUrl(value: string): boolean {
   try {

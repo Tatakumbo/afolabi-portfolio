@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 import { RiFileTextLine, RiGithubLine, RiLinkedinBoxLine, RiTwitterXLine } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
-import { Stagger,StaggerItem } from "../ui/Stagger";
+import { Stagger, StaggerItem } from "../ui/Stagger";
 
 type mediaTypes = {
     link: string;
@@ -10,21 +10,31 @@ type mediaTypes = {
     icon: ReactNode
 };
 const Medias: mediaTypes[] = [
-    {link: "http://x.com/tatakumbo",
+    {
+        link: "http://x.com/tatakumbo",
         title: "X",
-        icon: <RiTwitterXLine />},
-    {link: "http://linkdIn.com/afolabi-fajana",
+        icon: <RiTwitterXLine />
+    },
+    {
+        link: "http://linkdIn.com/afolabi-fajana",
         title: "LinkedIn",
-        icon: <RiLinkedinBoxLine />},
-    {link: "http://github.com/tatakumbo",
+        icon: <RiLinkedinBoxLine />
+    },
+    {
+        link: "http://github.com/tatakumbo",
         title: "Github",
-        icon: <RiGithubLine />},
-    {link: "http://gmail.com",
+        icon: <RiGithubLine />
+    },
+    {
+        link: "mailto:afolabifajana@gmail.com",
         title: "Gmail",
-        icon: <MdEmail />},
-    {link: "http://",
+        icon: <MdEmail />
+    },
+    {
+        link: "#/resume",
         title: "Resume",
-        icon: <RiFileTextLine />},
+        icon: <RiFileTextLine />
+    },
 ]
 
 export default function Socials() {
@@ -37,6 +47,6 @@ export default function Socials() {
             </div>
             )}
         </div>
-        </Stagger>
+    </Stagger>
     )
 }
