@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes } from 'react';
 
-type Variant = 'primary' | 'outline';
+type Variant = 'primary' | 'outline' | 'danger';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant;
@@ -9,6 +9,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const variants: Record<Variant, string> = {
   primary: 'bg-primary text-primary-foreground hover:opacity-90',
   outline: 'border border-border bg-background text-primary hover:bg-accent',
+  danger: 'bg-destructive text-white hover:opacity-90',
 };
 
 export default function Button({
@@ -21,7 +22,7 @@ export default function Button({
   return (
     <button
       type={type}
-      className={`rounded-md px-3 py-1 text-center transition-colors ${variants[variant]} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-md px-3 py-1.5 text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 ${variants[variant]} ${className}`}
       {...rest}
     >
       {children}

@@ -3,9 +3,9 @@ export interface Project {
   title: string;
   summary: string;
   tags: string[];
+  image?: string; 
   link?: string;
   repo?: string;
-  onSelect: (project: Project) => void;
 }
 
 export interface Achievement {

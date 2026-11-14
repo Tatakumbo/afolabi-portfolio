@@ -13,7 +13,7 @@ export default function Blog() {
       {sorted.length === 0 ? (
         <p className="text-muted-foreground">No posts yet.</p>
       ) : (
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2">
           {sorted.map((post) => (
             <BlogCard key={post.slug} post={post} />
           ))}
