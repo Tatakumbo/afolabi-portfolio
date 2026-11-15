@@ -16,7 +16,7 @@ const Medias: mediaTypes[] = [
         icon: <RiTwitterXLine />
     },
     {
-        link: "http://linkdIn.com/afolabi-fajana",
+                link: "https://www.linkedin.com/in/afolabi-fajana-1749b82a9",
         title: "LinkedIn",
         icon: <RiLinkedinBoxLine />
     },
